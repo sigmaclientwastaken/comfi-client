@@ -1,0 +1,27 @@
+{
+    "schemaVersion": 1,
+    "id": "Comfi",
+    "version": "${version}",
+    "name": "Comfi",
+    "description": "based ghost client.",
+    "authors": [
+        "sigmaclientwastaken"
+    ],
+    "contact": {},
+    "license": "MIT",
+    "icon": "assets/Comfi/icon.png",
+    "environment": "client",
+    "entrypoints": {
+        "main": [
+            "me.comfi.main.FabricMod"
+        ]
+    },
+    "mixins": [
+        "Comfi.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.14.10",
+        "fabric": "*",
+        "minecraft": "1.19.2"
+    }
+}
