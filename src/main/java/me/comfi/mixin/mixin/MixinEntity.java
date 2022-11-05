@@ -14,7 +14,7 @@ public class MixinEntity {
     public void getX(CallbackInfoReturnable<Double> cir) {
         if(MinecraftUtils.REDIRECTING_POS_ROT_GROUND &&
                 MinecraftUtils.isSelfPlayer((Entity) (Object) this)) {
-            cir.setReturnValue(MinecraftUtils.POS_ROT_GROUND.x());
+            cir.setReturnValue(MinecraftUtils.POS_ROT_GROUND.get().x());
         }
     }
 
@@ -22,7 +22,7 @@ public class MixinEntity {
     public void getY(CallbackInfoReturnable<Double> cir) {
         if(MinecraftUtils.REDIRECTING_POS_ROT_GROUND &&
                 MinecraftUtils.isSelfPlayer((Entity) (Object) this)) {
-            cir.setReturnValue(MinecraftUtils.POS_ROT_GROUND.y());
+            cir.setReturnValue(MinecraftUtils.POS_ROT_GROUND.get().y());
         }
     }
 
@@ -30,7 +30,7 @@ public class MixinEntity {
     public void getZ(CallbackInfoReturnable<Double> cir) {
         if(MinecraftUtils.REDIRECTING_POS_ROT_GROUND &&
                 MinecraftUtils.isSelfPlayer((Entity) (Object) this)) {
-            cir.setReturnValue(MinecraftUtils.POS_ROT_GROUND.z());
+            cir.setReturnValue(MinecraftUtils.POS_ROT_GROUND.get().z());
         }
     }
 
@@ -38,7 +38,7 @@ public class MixinEntity {
     public void getYaw(CallbackInfoReturnable<Float> cir) {
         if(MinecraftUtils.REDIRECTING_POS_ROT_GROUND &&
                 MinecraftUtils.isSelfPlayer((Entity) (Object) this)) {
-            cir.setReturnValue(MinecraftUtils.POS_ROT_GROUND.yaw());
+            cir.setReturnValue(MinecraftUtils.POS_ROT_GROUND.get().yaw());
         }
     }
 
@@ -46,7 +46,7 @@ public class MixinEntity {
     public void getPitch(CallbackInfoReturnable<Float> cir) {
         if(MinecraftUtils.REDIRECTING_POS_ROT_GROUND &&
                 MinecraftUtils.isSelfPlayer((Entity) (Object) this)) {
-            cir.setReturnValue(MinecraftUtils.POS_ROT_GROUND.pitch());
+            cir.setReturnValue(MinecraftUtils.POS_ROT_GROUND.get().pitch());
         }
     }
 

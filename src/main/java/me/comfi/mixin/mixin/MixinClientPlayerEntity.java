@@ -1,6 +1,8 @@
 package me.comfi.mixin.mixin;
 
 import com.mojang.authlib.GameProfile;
+import me.comfi.event.impl.UpdateEvent;
+import me.comfi.main.Comfi;
 import me.comfi.main.MinecraftUtils;
 import me.comfi.util.data.PosRotGroundRecord;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
@@ -30,16 +32,21 @@ public abstract class MixinClientPlayerEntity extends AbstractClientPlayerEntity
     public void sendMovementPacketsHead(CallbackInfo ci) {
         if(this.isCamera()) {
             MinecraftUtils.REDIRECTING_POS_ROT_GROUND = true;
-            MinecraftUtils.POS_ROT_GROUND = PosRotGroundRecord.getFromEntity(this);
             cachedGround = this.onGround;
 
+            UpdateEvent event = new UpdateEvent.Pre(PosRotGroundRecord.getFromEntity(this));
+            Comfi.getInstance().getEventBus().post(event);
 
+            MinecraftUtils.POS_ROT_GROUND = event::getAsRecord;
         }
     }
 
     @Inject(method = "sendMovementPackets", at = @At("RETURN"))
     public void sendMovementPacketsReturn(CallbackInfo ci) {
         if(this.isCamera()) {
+            UpdateEvent event = new UpdateEvent.Post(MinecraftUtils.POS_ROT_GROUND.get());
+            Comfi.getInstance().getEventBus().post(event);
+
             MinecraftUtils.REDIRECTING_POS_ROT_GROUND = false;
             MinecraftUtils.POS_ROT_GROUND = null;
             this.onGround = cachedGround;

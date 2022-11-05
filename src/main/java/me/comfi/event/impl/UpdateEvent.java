@@ -101,4 +101,8 @@ public class UpdateEvent extends Event {
         this.ground = ground;
     }
 
+    public final PosRotGroundRecord getAsRecord() {
+        return new PosRotGroundRecord(x, y, z, yaw, pitch, ground);
+    }
+
 }
