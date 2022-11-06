@@ -1,8 +1,8 @@
 package me.comfi.event.bus.bus.impl;
 
-import io.github.nevalackin.homoBus.Listener;
-import io.github.nevalackin.homoBus.annotations.EventLink;
-import io.github.nevalackin.homoBus.bus.Bus;
+import me.comfi.event.bus.Listener;
+import me.comfi.event.bus.annotations.EventLink;
+import me.comfi.event.bus.bus.Bus;
 
 import java.lang.invoke.MethodHandles;
 import java.lang.reflect.Field;
