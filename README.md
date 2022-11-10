@@ -11,4 +11,5 @@ Make a pull request with your changes and I will look at it at some point.
 
 # Usage
 Just build a jar like you normally would with a fabric mod. If you can't figure it out, that's not my problem. \
-**WARNING: This client is still very work in progress. It is not guarranteed to bypass or even work.**
+
+### **WARNING: This client is still very work in progress. It is not guarranteed to bypass or even work.**
