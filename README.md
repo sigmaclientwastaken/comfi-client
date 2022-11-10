@@ -6,6 +6,12 @@ Free and open source ghost client for 1.19.2.
 ## Why
 Because I literally couldn't find any ghost clients for newer versions.
 
+## TODO List
+- Finish the base.
+
+## Features List
+- literally nothing
+
 # Contributing
 Make a pull request with your changes and I will look at it at some point.
 
